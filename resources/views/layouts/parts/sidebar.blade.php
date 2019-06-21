@@ -27,19 +27,52 @@
       <li class="header">MENU UTAMA</li>
       <li class="{{ Request::is('home') || Request::is('home/*') ? 'active' : '' }}">
         <a href="{{ route('home.index') }}">
-          <i class="fa fa-home"></i> <span>Home</span>
+          <i class="fa fa-home"></i> <span>Beranda</span>
         </a>
       </li>
+
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-truck"></i> <span>Pentasyarupan</span>
+          <i class="fa fa-folder-open"></i> <span>Inventaris</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li class="">
+            <a href="#"><i class="fa fa-circle-o"></i> Kategori</a>
+          </li>
+          <li class="">
+            <a href="#"><i class="fa fa-circle-o"></i> Barang</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="">
+        <a href="#">
+          <i class="glyphicon glyphicon-transfer"></i> <span>Peminjaman</span>
         </a>
       </li>
+
+      <li class="header">SETTING MENU</li>
+
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-file"></i> <span>Laporan</span>
+          <i class="fa fa-users"></i> <span>Account</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
         </a>
+        <ul class="treeview-menu">
+          <li class="">
+            <a href="#"><i class="fa fa-circle-o"></i> User</a>
+          </li>
+          <li class="">
+            <a href="#"><i class="fa fa-circle-o"></i> Role</a>
+          </li>
+        </ul>
       </li>
+
     </ul>
   </section>
   <!-- /.sidebar -->
