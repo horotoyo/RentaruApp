@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Laravolt\Avatar\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -226,6 +227,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        /*
+         * Packages...
+         */
+        'Avatar'    => Laravolt\Avatar\Facade::class,
     ],
 
 ];
