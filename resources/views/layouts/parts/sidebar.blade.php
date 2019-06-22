@@ -26,7 +26,11 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">MENU UTAMA</li>
       <li class="{{ Request::is('admin') ? 'active' : '' }}">
+<<<<<<< HEAD
         <a href="{{ route('admin') }}">
+=======
+        <a href="{{ route('home.index') }}">
+>>>>>>> 3325dea2cfc2bb407277e9d344aa68a4ceb00e64
           <i class="fa fa-home"></i> <span>Beranda</span>
         </a>
       </li>
