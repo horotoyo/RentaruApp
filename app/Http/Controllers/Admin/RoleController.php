@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\Role;
 
 class RoleController extends Controller
 {
@@ -12,9 +13,12 @@ class RoleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    protected $folder   = 'admin.role';
+    protected $rdr      = 'admin/role';
     public function index()
     {
-        //
+      $roles  = Role::all();
+      return view($this->folder.'.index',compact('roles'));
     }
 
     /**
@@ -24,7 +28,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        return view($this->folder.'.create');
     }
 
     /**
@@ -35,7 +39,8 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Role::create($request->all());
+        return redirect($this->rdr)->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -57,7 +62,8 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $roles  = Role::find($id);
+        return view($this->folder.'.edit',compact('roles'));
     }
 
     /**
@@ -69,7 +75,10 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Role::find($id)->update([
+          'name' => $request->name
+        ]);
+        return redirect($this->rdr)->with('success','Data berhasil diubah!');
     }
 
     /**
@@ -80,6 +89,7 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Role::find($id)->delete();
+        return redirect($this->rdr)->with('success','Data berhasil dihapus!');
     }
 }
