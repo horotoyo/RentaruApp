@@ -19,12 +19,12 @@ class CreateProductsTable extends Migration
             $table->string('merk',50);
             $table->string('seri',10);
             $table->string('serial_number',50);
-            $table->string('status');
-            $table->enum('condition',['baru','seken','rusak','hilang']);
-            $table->integer('price',9);
             $table->string('product_code',20);
-            $table->text('description')->nullable();
+            $table->string('status');
             $table->string('source')->nullable();
+            $table->enum('condition',['baru','seken','rusak','hilang']);
+            $table->integer('price');
+            $table->text('description')->nullable();
             $table->timestamps();
             $table->foreign('type_id')->references('id')->on('type_products')->onDelete('cascade');
         });
