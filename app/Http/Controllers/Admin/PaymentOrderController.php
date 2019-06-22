@@ -13,10 +13,13 @@ class PaymentOrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    protected $folder       = 'admin.payment';
+    protected $rdr          = 'admin/payment';
+
     public function index()
     {
         $payments   = PaymentOrder::all();
-        return view('admin.payment.index', compact('payments'));
+        return view($this->folder.'.index', compact('payments'));
     }
 
     /**
@@ -26,7 +29,7 @@ class PaymentOrderController extends Controller
      */
     public function create()
     {
-        //
+        return view($this->folder.'.create');
     }
 
     /**
@@ -37,7 +40,8 @@ class PaymentOrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        PaymentOrder::create($request->all());
+        return redirect($this->rdr)->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -59,7 +63,8 @@ class PaymentOrderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $payment   = PaymentOrder::find($id);
+        return view($this->folder.'.edit', compact('payment'));
     }
 
     /**
@@ -71,7 +76,8 @@ class PaymentOrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        PaymentOrder::find($id)->update($request->all());
+        return redirect($this->rdr);
     }
 
     /**
@@ -82,6 +88,7 @@ class PaymentOrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        PaymentOrder::find($id)->delete();
+        return redirect($this->rdr)->with('success', 'Data berhasil dihapus!');
     }
 }

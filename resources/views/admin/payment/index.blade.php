@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
-@section('title', 'Type Product')
+@section('title', 'Payment')
 
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Payments
+    Jenis Pembayaran
   </h1>
   <ol class="breadcrumb">
-    <li><a href="{{ route('home.index') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li class="active">Payments</li>
+    <li><a href="{{ route('admin') }}"><i class="fa fa-dashboard"></i> Beranda</a></li>
+    <li class="active">Jenis Pembayaran</li>
   </ol>
 </section>
 
@@ -18,9 +18,15 @@
 <section class="content">
   <div class="row">
     <div class="col-xs-12">
+      @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-block">
+              <button type="button" class="close" data-dismiss="alert">×</button> 
+              <strong>{{ $message }}</strong>
+        </div>
+      @endif
       <div class="box box-primary">
         <div class="box-header with-border">
-          <a href="{{ route('payment.create') }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Create</a>
+          <a href="{{ route('payment.create') }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Tambah Data</a>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -28,7 +34,7 @@
             <thead>
             <tr>
               <th>No</th>
-              <th>Payment Name</th>
+              <th>Jenis Pembayaran</th>
               <th>Action</th>
             </tr>
             </thead>
@@ -45,7 +51,7 @@
                   @csrf
                   @method('DELETE')
                   <a href="{{ route('payment.edit', $payment->id) }}" class="btn btn-primary btn-xs">Edit</a>
-                  <button type="submit" class="btn btn-danger btn-xs">Delete</button>
+                  <button type="submit" class="btn btn-danger btn-xs" onclick='javascript:return confirm("Apakah anda yakin ingin menghapus data ini?")'>Delete</button>
                 </form>
               </td>
             </tr>
