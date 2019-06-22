@@ -9,7 +9,7 @@
     Tambah Kategori Produk
   </h1>
   <ol class="breadcrumb">
-    <li><a href="{{ route('home.index') }}"><i class="fa fa-dashboard"></i> Beranda</a></li>
+    <li><a href="{{ route('admin') }}"><i class="fa fa-dashboard"></i> Beranda</a></li>
     <li><a href="{{ route('type.index') }}">Kategori</a></li>
     <li class="active">Tambah Data</li>
   </ol>
