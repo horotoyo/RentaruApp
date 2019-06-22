@@ -24,7 +24,6 @@ class CreateProductsTable extends Migration
             $table->string('source')->nullable();
             $table->enum('condition',['baru','seken','rusak','hilang']);
             $table->integer('price');
-            $table->string('product_code',20);
             $table->text('description')->nullable();
             $table->timestamps();
             $table->foreign('type_id')->references('id')->on('type_products')->onDelete('cascade');
