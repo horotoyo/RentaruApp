@@ -30,7 +30,7 @@
           <div class="box-body">
             <div class="form-group">
               <label for="name">Nama Kategori</label>
-              <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Kategori" value={{$types->name}}>
+              <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Kategori" value='{{$types->name}}'>
             </div>
           </div>
           <!-- /.box-body -->
