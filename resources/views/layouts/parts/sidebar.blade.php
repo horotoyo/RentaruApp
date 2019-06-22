@@ -4,7 +4,7 @@
     <!-- Sidebar user panel -->
     <div class="user-panel">
       <div class="pull-left image">
-        <img src="{{ Avatar::create(auth()->user()->name)->toBase64() }}" class="img-circle" alt="User Image">
+        <img src="{{ Storage::url(auth()->user()->photo)? Storage::url(auth()->user()->photo) : Avatar::create(auth()->user()->name)->toBase64() }}" class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
         <p>{{ auth()->user()->name }}</p>
@@ -50,6 +50,12 @@
 
       <li class="">
         <a href="#">
+          <i class="fa fa-users"></i> <span>Member</span>
+        </a>
+      </li>
+
+      <li class="">
+        <a href="#">
           <i class="glyphicon glyphicon-transfer"></i> <span>Peminjaman</span>
         </a>
       </li>
@@ -64,7 +70,7 @@
 
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-users"></i> <span>Account</span>
+          <i class="fa fa-user"></i> <span>Account</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
