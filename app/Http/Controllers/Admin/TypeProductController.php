@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\TypeProduct;
 
 class TypeProductController extends Controller
 {
@@ -12,9 +13,12 @@ class TypeProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    protected $folder   = 'admin.typeProduct';
+    protected $rdr      = 'admin/type';
     public function index()
     {
-
+      $types    = TypeProduct::all();
+      return view($this->folder.'.index', compact('types'));
     }
 
     /**
@@ -24,7 +28,7 @@ class TypeProductController extends Controller
      */
     public function create()
     {
-        //
+        return view($this->folder.'.create');
     }
 
     /**
@@ -35,7 +39,8 @@ class TypeProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        TypeProduct::create($request->all());
+        return redirect($this->rdr)->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -57,7 +62,8 @@ class TypeProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $types = TypeProduct::find($id);
+        return view($this->folder.'.edit', compact('types'));
     }
 
     /**
@@ -69,7 +75,10 @@ class TypeProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        TypeProduct::find($id)->update([
+          'name'  => $request->name
+        ]);
+        return redirect($this->rdr)->with('success','Data berhasil diubah!');
     }
 
     /**
@@ -80,6 +89,7 @@ class TypeProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        TypeProduct::find($id)->delete();
+        return redirect($this->rdr)->with('success', 'Data berhasil dihapus!');
     }
 }
