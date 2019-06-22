@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\PaymentOrder;
 
 class PaymentOrderController extends Controller
 {
@@ -14,7 +15,8 @@ class PaymentOrderController extends Controller
      */
     public function index()
     {
-        //
+        $payments   = PaymentOrder::all();
+        return view('admin.payment.index', compact('payments'));
     }
 
     /**

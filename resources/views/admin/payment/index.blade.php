@@ -20,7 +20,7 @@
     <div class="col-xs-12">
       <div class="box box-primary">
         <div class="box-header with-border">
-          <a href="{{ route('payments.create') }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Create</a>
+          <a href="{{ route('payment.create') }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Create</a>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -34,20 +34,20 @@
             </thead>
             <tbody>
             @php
-            	$nomor = 1;
+              $nomor = 1;
             @endphp
             @foreach ($payments as $payment)
             <tr>
-            	<td width="20px">{{ $nomor++ }}</td>
-            	<td>{{ $payment->name }}</td>
-            	<td>
-            		<form method="post" action="{{ route('payments.destroy', $payment->id) }}">
-            			@csrf
-            			@method('DELETE')
-            			<a href="{{ route('payments.edit', $payment->id) }}" class="btn btn-primary btn-xs">Edit</a>
-            			<button type="submit" class="btn btn-danger btn-xs">Delete</button>
-            		</form>
-            	</td>
+              <td width="20px">{{ $nomor++ }}</td>
+              <td>{{ $payment->name }}</td>
+              <td>
+                <form method="post" action="{{ route('payment.destroy', $payment->id) }}">
+                  @csrf
+                  @method('DELETE')
+                  <a href="{{ route('payment.edit', $payment->id) }}" class="btn btn-primary btn-xs">Edit</a>
+                  <button type="submit" class="btn btn-danger btn-xs">Delete</button>
+                </form>
+              </td>
             </tr>
             @endforeach
             </tbody>

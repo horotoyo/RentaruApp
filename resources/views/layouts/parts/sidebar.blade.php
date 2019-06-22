@@ -25,7 +25,7 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">MENU UTAMA</li>
-      <li class="{{ Request::is('home') || Request::is('home/*') ? 'active' : '' }}">
+      <li class="{{ Request::is('admin/home') ? 'active' : '' }}">
         <a href="{{ route('home.index') }}">
           <i class="fa fa-home"></i> <span>Beranda</span>
         </a>
@@ -62,8 +62,8 @@
 
       <li class="header">SETTING MENU</li>
 
-      <li class="">
-        <a href="#">
+      <li class="{{ Request::is('admin/payment') ? 'active' : '' }}">
+        <a href="{{ route('payment.index') }}">
           <i class="fa fa-cc-paypal"></i> <span>Payment</span>
         </a>
       </li>
