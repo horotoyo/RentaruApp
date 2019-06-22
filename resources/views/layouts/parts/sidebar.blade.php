@@ -31,7 +31,8 @@
         </a>
       </li>
 
-      <li class="treeview">
+      {{-- Inventaris --}}
+      <li class="treeview {{ Request::is('admin/type','admin/type/create','admin/product','admin/product/create') ? 'active' : '' }}">
         <a href="#">
           <i class="fa fa-folder-open"></i> <span>Inventaris</span>
           <span class="pull-right-container">
@@ -39,36 +40,40 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li class="">
-            <a href="#"><i class="fa fa-circle-o"></i> Kategori</a>
+          <li class="{{ Request::is('admin/type','admin/type/create') ? 'active' : '' }}">
+            <a href="{{route('type.index')}}"><i class="fa fa-circle-o"></i> Kategori</a>
           </li>
-          <li class="">
-            <a href="#"><i class="fa fa-circle-o"></i> Barang</a>
+          <li class="{{ Request::is('admin/product','admin/product/create') ? 'active' : '' }}">
+            <a href="{{route('product.index')}}"><i class="fa fa-circle-o"></i> Barang</a>
           </li>
         </ul>
       </li>
 
+      {{-- Member --}}
       <li class="">
-        <a href="#">
+        <a href="{{route('member.index')}}">
           <i class="fa fa-users"></i> <span>Member</span>
         </a>
       </li>
 
+      {{-- Peminjaman --}}
       <li class="">
-        <a href="#">
+        <a href="{{route('order.index')}}">
           <i class="glyphicon glyphicon-transfer"></i> <span>Peminjaman</span>
         </a>
       </li>
 
       <li class="header">SETTING MENU</li>
 
+      {{-- Payment --}}
       <li class="{{ Request::is('admin/payment') ? 'active' : '' }}">
         <a href="{{ route('payment.index') }}">
           <i class="fa fa-cc-paypal"></i> <span>Payment</span>
         </a>
       </li>
 
-      <li class="treeview">
+      {{-- Account --}}
+      <li class="treeview {{ Request::is('admin/user','admin/user/create','admin/role','admin/role/create') ? 'active' : '' }}">
         <a href="#">
           <i class="fa fa-user"></i> <span>Account</span>
           <span class="pull-right-container">
@@ -76,11 +81,11 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li class="">
-            <a href="#"><i class="fa fa-circle-o"></i> User</a>
+          <li class="{{ Request::is('admin/user','admin/user/create') ? 'active' : '' }}">
+            <a href="{{route('user.index')}}"><i class="fa fa-circle-o"></i> User</a>
           </li>
-          <li class="">
-            <a href="#"><i class="fa fa-circle-o"></i> Role</a>
+          <li class="{{ Request::is('admin/role','admin/role/create') ? 'active' : '' }}">
+            <a href="{{route('role.index')}}"><i class="fa fa-circle-o"></i> Role</a>
           </li>
         </ul>
       </li>
