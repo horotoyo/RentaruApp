@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('serial_number',50);
             $table->string('status');
             $table->enum('condition',['baru','seken','rusak','hilang']);
-            $table->integer('price',9);
+            $table->integer('price');
             $table->string('product_code',20);
             $table->text('description')->nullable();
             $table->string('source')->nullable();

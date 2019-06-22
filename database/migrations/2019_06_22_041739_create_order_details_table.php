@@ -18,9 +18,9 @@ class CreateOrderDetailsTable extends Migration
             $table->unsignedBigInteger('order_id');
             $table->string('product_name',30);
             $table->string('product_price',8);
-            $table->integer('quantity',2);
+            $table->integer('quantity');
             $table->string('note')->nullable();
-            $table->integer('subtotal',8);
+            $table->integer('subtotal');
             $table->timestamps();
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
         });
