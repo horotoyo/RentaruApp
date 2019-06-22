@@ -56,6 +56,12 @@
 
       <li class="header">SETTING MENU</li>
 
+      <li class="">
+        <a href="#">
+          <i class="fa fa-cc-paypal"></i> <span>Payment</span>
+        </a>
+      </li>
+
       <li class="treeview">
         <a href="#">
           <i class="fa fa-users"></i> <span>Account</span>
