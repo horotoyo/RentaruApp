@@ -15,7 +15,7 @@ class CreatePaymentOrdersTable extends Migration
     {
         Schema::create('payment_orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name',20);
             $table->timestamps();
         });
     }

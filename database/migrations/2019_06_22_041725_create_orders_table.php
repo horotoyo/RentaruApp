@@ -20,8 +20,8 @@ class CreateOrdersTable extends Migration
             $table->unsignedInteger('payment_id');
             $table->string('payment_status');
             $table->string('email')->nullable();
-            $table->integer('total')->nullable();
-            $table->integer('discount')->nullable();
+            $table->integer('total',9)->nullable();
+            $table->integer('discount',3)->nullable();
             $table->date('time_periode');
             $table->timestamps();
             $table->foreign('member_id')->references('id')->on('members')->onDelete('cascade');

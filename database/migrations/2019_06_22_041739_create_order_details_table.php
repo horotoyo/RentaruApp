@@ -16,11 +16,11 @@ class CreateOrderDetailsTable extends Migration
         Schema::create('order_details', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('order_id');
-            $table->string('product_name');
-            $table->string('product_price');
-            $table->integer('quantity');
+            $table->string('product_name',30);
+            $table->string('product_price',8);
+            $table->integer('quantity',2);
             $table->string('note')->nullable();
-            $table->integer('subtotal');
+            $table->integer('subtotal',8);
             $table->timestamps();
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
         });

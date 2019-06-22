@@ -15,13 +15,13 @@ class CreateMembersTable extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
           $table->bigIncrements('id');
-          $table->integer('nik');
-          $table->string('name');
+          $table->integer('nik',16);
+          $table->string('name',50);
           $table->text('address');
           $table->boolean('gender');
           $table->string('birth_of_place');
           $table->date('date_of_birth');
-          $table->string('number_phone');
+          $table->string('number_phone',15);
           $table->string('email')->unique();
         });
     }

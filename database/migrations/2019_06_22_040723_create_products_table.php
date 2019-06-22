@@ -16,14 +16,15 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('type_id');
-            $table->string('merk');
-            $table->string('seri');
-            $table->string('serial_number');
+            $table->string('merk',50);
+            $table->string('seri',10);
+            $table->string('serial_number',50);
             $table->string('status');
             $table->enum('condition',['baru','seken','rusak','hilang']);
-            $table->integer('price');
-            $table->string('product_code');
+            $table->integer('price',9);
+            $table->string('product_code',20);
             $table->text('description')->nullable();
+            $table->string('source')->nullable();
             $table->timestamps();
             $table->foreign('type_id')->references('id')->on('type_products')->onDelete('cascade');
         });
