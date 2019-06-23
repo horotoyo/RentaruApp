@@ -27,7 +27,11 @@
         <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+<<<<<<< HEAD
             <img src="{{ (auth()->user()->photo)? Storage::url(auth()->user()->photo) : Avatar::create(auth()->user()->name)->toBase64() }}" class="user-image" alt="User Image">
+=======
+            <img src="{{ (auth()->user()->photo)? Storage::url(auth()->user()->photo) : Avatar::create(auth()->user()->name)->toBase64() }}" class="img-circle" alt="User Image">
+>>>>>>> afd76cba04b8009eec668905723f553914bf8168
             <span class="hidden-xs">{{ auth()->user()->name }}</span>
           </a>
           <ul class="dropdown-menu">
