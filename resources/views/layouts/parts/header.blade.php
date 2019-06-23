@@ -33,7 +33,7 @@
           <ul class="dropdown-menu">
             <!-- User image -->
             <li class="user-header">
-              <img src="{{ Storage::url(auth()->user()->photo)? Storage::url(auth()->user()->photo) : Avatar::create(auth()->user()->name)->toBase64() }}" class="img-circle" alt="User Image">
+              <img src="{{ (auth()->user()->photo)? Storage::url(auth()->user()->photo) : Avatar::create(auth()->user()->name)->toBase64() }}" class="img-circle" alt="User Image">
 
               <p>
                 {{ auth()->user()->name }}
