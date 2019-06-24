@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\Product;
+use App\Model\TypeProduct;
 
 class ProductController extends Controller
 {
@@ -12,9 +14,12 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    protected $folder   = 'admin.product';
+    protected $rdr      = 'admin/product';
     public function index()
     {
-        //
+      $products   = Product::all();
+      return view($this->folder.'.index', compact('products'));
     }
 
     /**
@@ -24,7 +29,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $products    = Product::all();
+        $types       = TypeProduct::all();
+        return view($this->folder.'.create',compact('products','types'));
     }
 
     /**
@@ -35,7 +42,12 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $date   = substr(date('Ymd'),2);
+        $init   = 'stabilizer';
+        $inat   = substr($init,0,3);
+        $nomor  = 0;
+        $code   = $inat.$date.$nomor;
+        dd($code);
     }
 
     /**
@@ -57,7 +69,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $products    = Product::find($id);
+        return view($this->folder.'.create',compact('products'));
     }
 
     /**
@@ -80,6 +93,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Product::find($id)->delete();
+        return redirect($this->rdr)->with('success','Data berhasil dihapus!');
     }
 }

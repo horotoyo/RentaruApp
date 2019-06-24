@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('type_id');
             $table->string('merk',50);
             $table->string('seri',10);
-            $table->string('serial_number',50);
+            $table->string('serial_number',50)->nullable();
             $table->string('product_code',20);
             $table->string('status');
             $table->string('source')->nullable();
