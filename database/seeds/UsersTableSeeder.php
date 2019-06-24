@@ -17,6 +17,7 @@ class UsersTableSeeder extends Seeder
     		'email'			=> 'suryowidiyantogm@gmail.com',
             'password'      => bcrypt('123'),
             'role_id'		=> 1,
+            'photo'         => 'public/users_img/123.png',
     		'created_at'	=> now(),
     		'updated_at'	=> now(),
         ];

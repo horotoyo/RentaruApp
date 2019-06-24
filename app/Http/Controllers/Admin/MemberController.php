@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\Member;
+use Illuminate\Support\Facades\DB;
 
 class MemberController extends Controller
 {
@@ -12,9 +14,13 @@ class MemberController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    protected $folder       = 'admin.member';
+    protected $rdr          = 'admin/member';
+
     public function index()
     {
-        //
+        $members       = DB::table('members')->get();
+        return view($this->folder.'.index', compact('members'));
     }
 
     /**
@@ -24,7 +30,7 @@ class MemberController extends Controller
      */
     public function create()
     {
-        //
+        return view($this->folder.'.create');
     }
 
     /**
@@ -35,7 +41,25 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $date       = substr(date('Ymd'), 2);
+        $get        = substr(DB::table('members')->max('id'), 6);
+
+        if ($get) {
+            $process    = $get+1;
+        } else {
+            $process    = 1;
+        }
+        
+        $input_date = $date.$process;
+
+        // dd($input_date);
+
+        $request->merge([
+            'id'   => $input_date,
+        ]);
+
+        Member::create($request->all());
+        return redirect($this->rdr)->with('success', 'Data berhasil diinput!');
     }
 
     /**

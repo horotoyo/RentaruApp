@@ -50,14 +50,14 @@
       </li>
 
       {{-- Member --}}
-      <li class="">
+      <li class="{{ Request::is('admin/member') ? 'active' : '' }}">
         <a href="{{route('member.index')}}">
           <i class="fa fa-users"></i> <span>Member</span>
         </a>
       </li>
 
       {{-- Peminjaman --}}
-      <li class="">
+      <li class="{{ Request::is('admin/order') ? 'active' : '' }}">
         <a href="{{route('order.index')}}">
           <i class="glyphicon glyphicon-transfer"></i> <span>Peminjaman</span>
         </a>

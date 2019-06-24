@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>RentaruApp | @yield('title')</title>
   @include('layouts.parts.css')
+  @yield('css')
 </head>
 <!-- ADD THE CLASS fixed TO GET A FIXED HEADER AND SIDEBAR LAYOUT -->
 <!-- the fixed layout is not compatible with sidebar-mini -->
@@ -41,5 +42,6 @@
 <!-- ./wrapper -->
 
 @include('layouts.parts.script')
+@yield('script')
 </body>
 </html>

@@ -14,15 +14,18 @@ class CreateMembersTable extends Migration
     public function up()
     {
         Schema::create('members', function (Blueprint $table) {
-          $table->string('id')->index();
+          $table->string('id', 15);
           $table->string('nik',16);
           $table->string('name',50);
-          $table->text('address');
+          $table->string('address');
           $table->boolean('gender');
           $table->string('birth_of_place');
           $table->date('date_of_birth');
           $table->string('number_phone',15);
           $table->string('email')->unique();
+          $table->timestamps();
+          
+          $table->primary('id');
         });
     }
 

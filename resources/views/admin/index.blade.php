@@ -6,46 +6,84 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Fixed Layout
-    <small>Blank example to the fixed layout</small>
+    Dashboard
   </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="#">Layout</a></li>
-    <li class="active">Fixed</li>
+    <li class="active"><a href=><i class="fa fa-dashboard"></i> Beranda</a></li>
   </ol>
 </section>
 
 <!-- Main content -->
 <section class="content">
-  <div class="callout callout-info">
-    <h4>Tip!</h4>
+  <!-- Info boxes -->
+  <div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <a href=""><span class="info-box-icon bg-red"><i class="fa fa-tags"></i></span></a>
 
-    <p>Add the fixed class to the body tag to get this layout. The fixed layout is your best option if your sidebar
-      is bigger than your content because it prevents extra unwanted scrolling.</p>
-  </div>
-  <!-- Default box -->
-  <div class="box">
-    <div class="box-header with-border">
-      <h3 class="box-title">Title</h3>
-
-      <div class="box-tools pull-right">
-        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-          <i class="fa fa-minus"></i></button>
-        <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-          <i class="fa fa-times"></i></button>
+        <div class="info-box-content">
+          <span class="info-box-text">Kategori</span>
+          <span class="info-box-number"> <small>Kategori Tersedia</small></span>
+          <a href="" class="btn btn-danger btn-xs">Detail</a>
+        </div>
+        <!-- /.info-box-content -->
       </div>
+      <!-- /.info-box -->
     </div>
-    <div class="box-body">
-      Start creating your amazing application!
+    <!-- /.col -->
+
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <a href=""><span class="info-box-icon bg-aqua"><i class="fa fa-camera"></i></span></a>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Barang</span>
+          <span class="info-box-number"> <small>Barang Tersedia</small></span>
+          <a href="" class="btn btn-info btn-xs">Detail</a>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
     </div>
-    <!-- /.box-body -->
-    <div class="box-footer">
-      Footer
+    <!-- /.col -->
+    <!-- fix for small devices only -->
+    <div class="clearfix visible-sm-block"></div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <a href=""><span class="info-box-icon bg-green"><i class="glyphicon glyphicon-transfer"></i></span></a>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Peminjaman</span>
+          <span class="info-box-number"> <small>Peminjaman Hari ini </small></span>
+          <a href="" class="btn btn-success btn-xs">Detail</a>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
     </div>
-    <!-- /.box-footer-->
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <a href=""><span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span></a>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Member</span>
+          <span class="info-box-number"> <small>Member</small></span>
+          <a href="" class="btn btn-warning btn-xs">Detail</a>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
   </div>
-  <!-- /.box -->
+  <!-- /.row -->
+  <!-- Main row -->
+  <div class="row">
+    
+  </div>
+  <!-- /.row (main row) -->
 
 </section>
 <!-- /.content -->
