@@ -50,22 +50,16 @@
       </li>
 
       {{-- Member --}}
-<<<<<<< HEAD
       <li class="{{ Request::is('admin/member') ? 'active' : '' }}">
-=======
       <li class="{{ Request::is('admin/member','admin/member/create') ? 'active' : '' }}">
->>>>>>> 82cd27f28d54f05ac4e833d70a65cd50032ead77
         <a href="{{route('member.index')}}">
           <i class="fa fa-users"></i> <span>Member</span>
         </a>
       </li>
 
       {{-- Peminjaman --}}
-<<<<<<< HEAD
       <li class="{{ Request::is('admin/order') ? 'active' : '' }}">
-=======
       <li class="{{ Request::is('admin/order','admin/order/create') ? 'active' : '' }}">
->>>>>>> 82cd27f28d54f05ac4e833d70a65cd50032ead77
         <a href="{{route('order.index')}}">
           <i class="glyphicon glyphicon-transfer"></i> <span>Peminjaman</span>
         </a>

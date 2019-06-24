@@ -24,7 +24,7 @@
         <div class="info-box-content">
           <span class="info-box-text">Kategori</span>
           <span class="info-box-number"> <small>Kategori Tersedia</small></span>
-          <a href="" class="btn btn-danger btn-xs">Detail</a>
+          <a href="{{route('type.index')}}" class="btn btn-danger btn-xs">Detail</a>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -39,7 +39,7 @@
         <div class="info-box-content">
           <span class="info-box-text">Barang</span>
           <span class="info-box-number"> <small>Barang Tersedia</small></span>
-          <a href="" class="btn btn-info btn-xs">Detail</a>
+          <a href="{{route('product.index')}}" class="btn btn-info btn-xs">Detail</a>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -56,7 +56,7 @@
         <div class="info-box-content">
           <span class="info-box-text">Peminjaman</span>
           <span class="info-box-number"> <small>Peminjaman Hari ini </small></span>
-          <a href="" class="btn btn-success btn-xs">Detail</a>
+          <a href="{{route('order.index')}}" class="btn btn-success btn-xs">Detail</a>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -70,7 +70,7 @@
         <div class="info-box-content">
           <span class="info-box-text">Member</span>
           <span class="info-box-number"> <small>Member</small></span>
-          <a href="" class="btn btn-warning btn-xs">Detail</a>
+          <a href="{{route('member.index')}}" class="btn btn-warning btn-xs">Detail</a>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -81,7 +81,7 @@
   <!-- /.row -->
   <!-- Main row -->
   <div class="row">
-    
+
   </div>
   <!-- /.row (main row) -->
 
