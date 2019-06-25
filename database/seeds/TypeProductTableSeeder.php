@@ -35,6 +35,6 @@ class TypeProductTableSeeder extends Seeder
             ],
         ];
         DB::table('type_products')->truncate();
-        DB::table('type_products')->isert($data);
+        DB::table('type_products')->insert($data);
     }
 }
